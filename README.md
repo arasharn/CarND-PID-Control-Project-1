@@ -16,7 +16,10 @@ For this project, we used a PID controller which stands for Proportional, Integr
 The proportional part of the controller simply calculates the steering angle as the error scaled by a constant (proportional) factor. This also means that no matter how small the error there will always be overshoot by the nature of the control mechanism. I.e. for the P controller to act an error has to exist therefore it will always have minimal overshoot.
 
 ### I
+The integral part of the controller computes the area under the error curve by continously adding up the error and scaling it by the i-factor. This component of the PID controller accounts for the constant error that is accumulating and constantly increasing over each time step.
 
+### D
+The differential part of the controller is a term that uses the difference between the previous and current time step to create another part of the PID controller. This part controlls the overshoot caused by the P controller and allows the control signal to asymptotically approach the goal trajectory.
 
 
 ## Dependencies
